@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
         
         titleLabel.text = ""
         var charIndex = 0.0
-        let titleText = "⚡️FlashChat"
+        let titleText = K.addName
 //        анимация букв
         for letter in titleText {
 //            задержка появления букв
@@ -28,4 +28,6 @@ class WelcomeViewController: UIViewController {
         }
         
     }
+    
+    
 }
