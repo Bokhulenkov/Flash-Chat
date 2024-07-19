@@ -28,7 +28,7 @@ class ChatViewController: UIViewController {
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
         loadMessages()
-        keyboardIsHiden()
+//        keyboardIsHiden()
 
     }
     
@@ -51,7 +51,7 @@ class ChatViewController: UIViewController {
             }
         }
 //        скрываем клавиатура
-        messageTextfield.resignFirstResponder()
+//        messageTextfield.resignFirstResponder()
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -101,7 +101,7 @@ class ChatViewController: UIViewController {
     }
     
 // MARK: - Keyboard Settings
-    
+    /*
     private func keyboardIsHiden() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -122,8 +122,7 @@ class ChatViewController: UIViewController {
     @objc private func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
     }
-    
-    
+    */
     
 }
 
