@@ -46,6 +46,7 @@ class ChatViewController: UIViewController {
                 if let error = error {
                     print("Ошибка сохранения данных \(error)")
                 } else {
+                    self.messageTextfield.text = ""
                     print("Seccessfully saved data")
                 }
             }
