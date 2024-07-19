@@ -34,19 +34,21 @@ class ChatViewController: UIViewController {
     
 
     
-    @IBAction func sendPressed(_ sender: UIButton) {
+    @IBAction func sendPressed(_ sender: UIButton?) {
         
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
             //            отправляем в облако
             db.collection(K.FStore.collectionName).addDocument(data: [
                 K.FStore.senderField: messageSender,
-                K.FStore.bodyField: messageBody]) { error in
-                    if let error = error {
-                        print("Ошибка сохранения данных \(error)")
-                    } else {
-                        print("Seccessfully saved data")
-                    }
+                K.FStore.bodyField: messageBody,
+                K.FStore.dateField: Date().timeIntervalSince1970
+            ]) { error in
+                if let error = error {
+                    print("Ошибка сохранения данных \(error)")
+                } else {
+                    print("Seccessfully saved data")
                 }
+            }
         }
 //        скрываем клавиатура
         messageTextfield.resignFirstResponder()
@@ -66,12 +68,17 @@ class ChatViewController: UIViewController {
     private func setDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
+        messageTextfield.delegate = self
     }
     
     private func loadMessages() {
-        messages = []
         
-        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+        db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
+            
+            self.messages = []
+            
             if let error = error {
                 print("Ошибка извлечения данный \(error)")
             } else {
@@ -134,5 +141,17 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = ("\(message.sender): \(message.body)")
         
         return cell
+    }
+}
+
+// MARK: - Extensions TextField
+
+extension ChatViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == messageTextfield {
+            sendPressed(nil)
+            return false
+        }
+        return true
     }
 }
