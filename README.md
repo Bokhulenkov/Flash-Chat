@@ -1,6 +1,14 @@
 # Flash-Chat
 
-## Our Goal
+<p align="center">
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image1.png" width="140" /> 
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image2.png" width="140" />  
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image3.png" width="140" /> 
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image4.png" width="140" /> 
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image5.png" width="140" /> 
+</p>
+
+## About
 
 One of the most fundamental component of modern iOS apps is the Table View. Table Views are used everywhere from the Mail app to the Messages app. It’s a crucial part of every iOS developer’s tool belt. In this tutorial we’ll be getting to grips with Table Views, creating custom cells, and making our own cloud-based backend database. It’s going to be epic, so buckle up.
 
@@ -8,40 +16,20 @@ One of the most fundamental component of modern iOS apps is the Table View. Tabl
 
 Flash Chat is an internet based messaging app similar to WhatsApp, the popular messaging app that was bought by Facebook for $22 billion. We will be using a service called Firebase Firestore as a backend database to store and retrieve our messages from the cloud. 
 
-## What you will learn
+## What i do
 
-* How to integrate third party libraries in your app using Cocoapods and Swift Package Manager.
-* How to store data in the cloud using Firebase Firestore.
-* How to query and sort the Firebase database.
-* How to use Firebase for user authentication, registration and login.
-* How to work with UITableViews and how to set their data sources and delegates.
-* How to create custom views using .xib files to modify native design components.
-* How to embed View Controllers in a Navigation Controller and understand the navigation stack.
-* How to create a constants file and use static properties to store Strings and other constants.
-* Learn about Swift loops and create animations using loops.
-* Learn about the App Lifecycle and how to use viewWillAppear or viewWillDisappear.
-* How to create direct Segues for navigation.
+* I'm integrate third party libraries in app using Cocoapods and Swift Package Manager.
+* Store data in the cloud using Firebase Firestore.
+* Sort the Firebase database.
+* Use Firebase for user authentication, registration and login.
+* Create custom views using .xib files to modify native design components.
 
-
-# Constants
-```
-struct K {
-    static let cellIdentifier = "ReusableCell"
-    static let cellNibName = "MessageCell"
-    static let registerSegue = "RegisterToChat"
-    static let loginSegue = "LoginToChat"
-    
-    struct BrandColors {
-        static let purple = "BrandPurple"
-        static let lightPurple = "BrandLightPurple"
-        static let blue = "BrandBlue"
-        static let lighBlue = "BrandLightBlue"
-    }
-    
-    struct FStore {
-        static let collectionName = "messages"
-        static let senderField = "sender"
-        static let bodyField = "body"
-        static let dateField = "date"
-    }
-}
+<p align="center">
+<img src="https://github.com/Bokhulenkov/Flash-Chat-iOS13/blob/main/Images/image6.png" width="1200" /> 
+</p>
+____
+<p align="left">
+<img src="https://img.shields.io/badge/Xcode_14.2%20-blue%20?label=Swift&color=blue" />
+<img src="https://img.shields.io/badge/13-brightgreen%20?style=flat&label=iOS&labelColor=orange" />
+<img src="https://img.shields.io/badge/UIKit-violet?style=flat" />
+</p>
